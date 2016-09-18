@@ -11,10 +11,6 @@ API
 Methods
 -------
 
-**\* Note: As with the 'error' event, any error objects passed to callbacks will have a 'code' property for protocol-level errors.**
-
-* **(constructor)**() - Creates and returns a new FTP client instance.
-
 * **connect**(< _object_ >config) - _(void)_ - Connects to an FTP server. Valid config properties:
 
     * host - _string_ - The hostname or IP address of the FTP server. **Default:** 'localhost'
@@ -35,4 +31,9 @@ Methods
 
     * keepalive - _integer_ - How often (in milliseconds) to send a 'dummy' (NOOP) command to keep the connection alive. **Default:** 10000
 
-    * fileEncoding - _string_ - Transfer encoding. **Default:** (none) <- ***Added***
+    * fileEncoding - _string_ - Transfer encoding. **Default:** 'binary' <- ***Added***
+
+how to use
+---
+
+fileEncode に 'UTF8' 等を指定すると、listコマンドの戻りにANK以外のファイル名があっても正しく受信できるようになります。
