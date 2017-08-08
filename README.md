@@ -33,6 +33,14 @@ Methods
 
     * fileEncoding - _string_ - Transfer encoding. **Default:** 'binary' <- ***Added***
 
+### Extended methods
+
+* **nlist**([< _string_ >path, ][< _boolean_ >useCompression, ]< _function_ >callback) - _(void)_
+  > Behavior is the same as `list` method. Use `NLST -alL` for internal execute
+
+* **mlist**([< _string_ >path, ][< _boolean_ >useCompression, ]< _function_ >callback) - _(void)_
+    > Behavior is the same as `list` method. Use MLSD` for internal execute
+
 how to use
 ---
 
