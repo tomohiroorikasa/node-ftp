@@ -86,6 +86,8 @@ prompt.get(schema, function (err,result) {
             if(!err) {
               //console.log('success list', list.length);
               console.log('success list', list);
+              console.log('success list', list.length);
+              //console.log('success list', list);
               resolve();
             } else {
               console.log('failed list');
@@ -99,9 +101,24 @@ prompt.get(schema, function (err,result) {
             if(!err) {
               //console.log('success nlist', nlist.length);
               console.log('success nlist', nlist);
+              console.log('success nlist', nlist.length);
+              //console.log('success nlist', nlist);
               resolve();
             } else {
               console.log('failed nlist');
+              reject();
+            }
+          });
+        });
+
+        yield new Promise(function(resolve,reject){
+          c.mlist(result.path,function(err,mlist){
+            if(!err) {
+              //console.log('success mlist', mlist.length);
+              console.log('success mlist', mlist);
+              resolve();
+            } else {
+              console.log('failed mlist');
               reject();
             }
           });
@@ -127,8 +144,15 @@ prompt.get(schema, function (err,result) {
       c.end();
       //console.log('finish');
     }, function (err) {
+    }).then(function(){
+      console.log('finish');
+      process.exit(0);
+      //c.end();
+    }, function(err){
       console.error(err);
       c.end();
+      process.exit(1);
+      //c.end();
     });
   });
 });

@@ -1,6 +1,6 @@
 {
   "name": "ftp",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "author": "Tomohiro Orikasa <tomohiro@ocids.com>",
   "description": "An FTP client module for node.js",
   "main": "./lib/connection",
@@ -8,8 +8,10 @@
     "node": ">=0.8.0"
   },
   "dependencies": {
-    "xregexp": "2.0.0",
-    "readable-stream": "1.1.x"
+    "moment": "^2.18.1",
+    "perms": "^0.1.0",
+    "readable-stream": "1.1.x",
+    "xregexp": "2.0.0"
   },
   "scripts": {
     "test": "node test/test.js"
@@ -31,6 +33,7 @@
   },
   "devDependencies": {
     "co": "^4.6.0",
+    "moment": "^2.18.1",
     "prompt": "^1.0.0"
   }
 }
